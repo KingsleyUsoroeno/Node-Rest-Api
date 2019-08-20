@@ -1,0 +1,28 @@
+{
+  "name": "blog_post_api",
+  "version": "1.0.0",
+  "description": "A Blog Post type api using NodeJs, Express and MongoDb",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "NodeJs",
+    "Express",
+    "REST",
+    "API",
+    "MongoDb",
+    "Mongoose"
+  ],
+  "author": "KingsleyTech",
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9",
+    "nodemon": "^1.19.1",
+    "parser": "^0.1.4"
+  }
+}
