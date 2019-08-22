@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router(); // Allows us to creates routes that we can export to other files
 
-const Post = require('../models/PostModel')
+const Post = require('../models/PostModel');
 
 //GET ALL POST
 router.get('/', async (req, res) =>{
@@ -32,7 +32,7 @@ router.get('/:postId', async (req, res) =>{
 });
 
 //SUBMIT A POST
-router.post('/post', async (req, res) =>{
+router.post('/post', async (req, res) => {
     // req has the information that comes from the route, res is used to send information back to the client
     var post = Post(req.body);
     try{
