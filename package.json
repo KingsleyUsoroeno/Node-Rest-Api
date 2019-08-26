@@ -4,7 +4,7 @@
   "description": "A Blog Post type api using NodeJs, Express and MongoDb",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "engines": {
     "node": "10.15.1"
