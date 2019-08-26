@@ -34,7 +34,7 @@ router.get('/:postId', async (req, res) =>{
 //SUBMIT A POST
 router.post('/post', async (req, res) => {
     // req has the information that comes from the route, res is used to send information back to the client
-    var post = Post(req.body);
+    const post = Post(req.body);
     try{
         const savedPost = await post.save();
         res.json(savedPost)

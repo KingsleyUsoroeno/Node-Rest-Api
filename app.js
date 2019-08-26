@@ -4,6 +4,10 @@ const express = require("express");
 
 const app = express();
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+const port = process.env.PORT || 3000;
+
 const mongoose = require("mongoose");
 
 require("dotenv/config");
@@ -37,15 +41,15 @@ app.use('/register', signUpRouter);
 app.use('/login', loginRoute);
 
 
-// Connect to our Db
-// mongoose.connect(process.env.DBCONNECTION, {useNewUrlParser: true}, function(err){
-//   console.error(`Mongoose connection error: ${err}`);
-// });
+// Connect to our Db These is Done Because i want to put these App on Heroku
+mongoose.connect(process.env.DBCONNECTION, {useNewUrlParser: true}, function(err){
+  console.error(`Mongoose connection error: ${err}`);
+});
 
 // SWITCHED TO USING MONGODB LOCALLY RATHER THAN USING USING MONGODB ON THE CLOUD
-mongoose.connect('mongodb://localhost/blogDb',{ useNewUrlParser: true });
-mongoose.Promise = global.Promise
+// mongoose.connect('mongodb://localhost/blogDb',{ useNewUrlParser: true });
+// mongoose.Promise = global.Promise
 
 
 // KickStart our Server to listening for request
-app.listen(3000);
+app.listen(port, () => console.log(`Server is up and running on port ${port}`));
